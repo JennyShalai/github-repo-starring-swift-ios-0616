@@ -40,5 +40,12 @@ class ReposTableViewController: UITableViewController {
 
         return cell
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.store.toggleStarStatusForRepository(self.store.repositories[indexPath.row]) {
+            print("toggling is done")
+        }
+//        self.store.toggleStarStatusForRepository(self.store.repositories[indexPath.row])
+    }
 
 }
